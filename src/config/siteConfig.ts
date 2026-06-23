@@ -6,17 +6,17 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "修丁日记",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "抓把春风学黛玉巧借春风舞一曲",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://dzbxu.top",
 
 	// 站点描述
 	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+		"本人名下个人网站（名称：修丁日记），网站开办后仅用于个人原创内容展示。主要内容为个人生活点滴记录、读书感悟、日常随笔、个人兴趣分享，内容形式以图文为主。",
 
 	// 站点关键词
 	keywords: [
