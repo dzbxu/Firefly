@@ -258,15 +258,15 @@ const stickyNavbar = siteConfig.navbar.stickyNavbar ?? false;
 const configQuality = getImageQuality();
 const mobileQuality = Math.round(configQuality * 0.9);
 const bannerCarouselEnabledDefault =
-	backgroundWallpaper.banner?.carousel?.enable ?? false;
+	backgroundWallpaper.common?.carousel?.enable ?? false;
 const bannerCarouselSwitchable =
-	backgroundWallpaper.banner?.carousel?.switchable ?? false;
+	backgroundWallpaper.common?.carousel?.switchable ?? false;
 const bannerCarouselInterval = Math.max(
-	backgroundWallpaper.banner?.carousel?.interval ?? 5000,
+	backgroundWallpaper.common?.carousel?.interval ?? 5000,
 	3000,
 );
 const bannerCarouselEffect =
-	backgroundWallpaper.banner?.carousel?.transitionEffect ?? "fade";
+	backgroundWallpaper.common?.carousel?.transitionEffect ?? "fade";
 const hasMultipleImages =
 	backgroundImages.desktop.length > 1 || backgroundImages.mobile.length > 1;
 ---
@@ -318,7 +318,7 @@ const hasMultipleImages =
 				: `top: -${BANNER_HEIGHT_EXTEND}vh`
 }>
     <!-- 背景图片显示 -->
-    {(bannerCarouselEnabledDefault && hasMultipleImages) ? (
+    {hasMultipleImages ? (
     <!-- 轮播模式：渲染所有图片为 slide-item -->
     <div class:list={["relative h-full w-full bg-black", `effect-${bannerCarouselEffect}`]} id="banner-images-container"
          style={`z-index: 5; --carousel-interval: ${bannerCarouselInterval}ms`}
@@ -396,7 +396,7 @@ const hasMultipleImages =
     )}
 
     <!-- 壁纸轮播脚本（基于 CSS transition） -->
-    {(bannerCarouselEnabledDefault && hasMultipleImages) && (
+    {hasMultipleImages && (
     <script is:inline data-swup-ignore-script>
         (function initBannerCarousel() {
             var container = document.getElementById('banner-images-container');
